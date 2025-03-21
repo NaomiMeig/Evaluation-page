@@ -8,8 +8,7 @@ const EvaluationForm = () => {
   const [stage, setStage] = useState("");
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-3xl">
+    <div className="min-h-screen bg-purple-100">
         <h2 className="text-xl font-semibold text-purple-600 mb-4">Évaluation</h2>
         
 
@@ -18,7 +17,7 @@ const EvaluationForm = () => {
           <label className="block text-gray-700">Le nom de la startup :</label>
           <input
             type="text"
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500"
+            className="w-90 mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500"
             value={startupName}
             onChange={(e) => setStartupName(e.target.value)}
           />
@@ -29,7 +28,7 @@ const EvaluationForm = () => {
           <label className="block text-gray-700">Ta startup en une phrase :</label>
           <input
             type="text"
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500"
+            className="w-200 mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
@@ -58,7 +57,6 @@ const EvaluationForm = () => {
           </div>
         </div>
 
-        {/* Nombre d'associés (si oui) */}
         {hasAssociates && (
           <div className="mb-4">
             <label className="block text-gray-700">Nombre d'associés :</label>
@@ -81,7 +79,7 @@ const EvaluationForm = () => {
         {/* Stade de développement */}
         <div className="mb-6">
           <label className="block text-gray-700">Stade de développement :</label>
-          <div className="flex space-x-2 mt-2">
+          <div className="flex flex-wrap gap-2 mt-2">
             {["Idée en cours de validation", "Prototype ou MVP prêt", "Produit lancé avec des utilisateurs/clients initiaux","Croissance:produit validé avec des revenus réguliers"].map(
               (option) => (
                 <button
@@ -98,17 +96,16 @@ const EvaluationForm = () => {
           </div>
         </div>
 
-        {/* Bouton Continuer */}
-        <div className="flex justify-end gap-4 mt-6">
-          <button className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700">
+        
+        <div className="flex justify-end gap-3">
+          <button className="w-64 bg-purple-300 text-white py-2 rounded-md hover:bg-black">
             Revenir
           </button>
-          <button className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700">
+          <button className="w-64 bg-purple-300 text-white py-2 rounded-md hover:bg-black">
             Continuer
           </button>
 
         </div>
-      </div>
     </div>
   );
 };
