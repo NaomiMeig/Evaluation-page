@@ -8,36 +8,36 @@ const EvaluationForm = () => {
   const [stage, setStage] = useState("");
 
   return (
-    <div className="min-h-screen bg-purple-100">
-        <h2 className="text-xl font-semibold text-purple-600 mb-4">Évaluation</h2>
+    <div className="min-h-screen w-full bg-purple-100 p-4 sm:p-6 lg:p-8">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-purple-600 mb-6">Évaluation</h2>
         
 
         {/* Nom de la startup */}
-        <div className="mb-4">
-          <label className="block text-gray-700">Le nom de la startup :</label>
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm sm:text-base">Le nom de la startup :</label>
           <input
             type="text"
-            className="w-90 mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500"
+            className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 bg-white text-sm sm:text-base"
             value={startupName}
             onChange={(e) => setStartupName(e.target.value)}
           />
         </div>
 
         {/* Description de la startup */}
-        <div className="mb-4">
-          <label className="block text-gray-700">Ta startup en une phrase :</label>
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm sm:text-base">Ta startup en une phrase :</label>
           <input
             type="text"
-            className="w-200 mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500"
+            className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 bg-white text-sm sm:text-base"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
 
         {/* A-t-il des associés ? */}
-        <div className="mb-4">
+        <div className="mb-6">
           <label className="block text-gray-700">T'as des associés ?</label>
-          <div className="flex space-x-4 mt-2">
+          <div className="flex flex-wrap gap-4 mt-4">
             <button
               className={`px-4 py-2 rounded-md ${
                 hasAssociates === true ? "bg-purple-600 text-white" : "bg-gray-200"
@@ -58,9 +58,9 @@ const EvaluationForm = () => {
         </div>
 
         {hasAssociates && (
-          <div className="mb-4">
-            <label className="block text-gray-700">Nombre d'associés :</label>
-            <div className="flex space-x-2 mt-2">
+          <div className="mb-6">
+            <label className="block text-gray-700 text-sm sm:text-base">Nombre d'associés :</label>
+            <div className="flex flex-wrap gap-4 mt-4">
               {[1, 2, 3, 4, "5+"].map((num) => (
                 <button
                   key={num}
@@ -79,7 +79,7 @@ const EvaluationForm = () => {
         {/* Stade de développement */}
         <div className="mb-6">
           <label className="block text-gray-700">Stade de développement :</label>
-          <div className="flex flex-wrap gap-2 mt-2">
+          <div className="flex flex-wrap gap-2 mt-4">
             {["Idée en cours de validation", "Prototype ou MVP prêt", "Produit lancé avec des utilisateurs/clients initiaux","Croissance:produit validé avec des revenus réguliers"].map(
               (option) => (
                 <button
@@ -97,11 +97,11 @@ const EvaluationForm = () => {
         </div>
 
         
-        <div className="flex justify-end gap-3">
-          <button className="w-64 bg-purple-300 text-white py-2 rounded-md hover:bg-black">
+        <div className="flex flex-col sm:flex-row justify-end gap-3">
+          <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 rounded-md hover:bg-black">
             Revenir
           </button>
-          <button className="w-64 bg-purple-300 text-white py-2 rounded-md hover:bg-black">
+          <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 rounded-md hover:bg-black">
             Continuer
           </button>
 
