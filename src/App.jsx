@@ -11,10 +11,12 @@ function App() {
       <EvaluationForm />
     </div><div>
         <TeamForm />
-      </div></>
+      </div> 
+      
       <RevenueForm/> 
       
-    </div>
+  
+    </>
   );
 }
 
