@@ -8,8 +8,8 @@ const EvaluationForm = () => {
   const [stage, setStage] = useState("");
 
   return (
-    <div className="min-h-screen w-full bg-purple-100 p-4 sm:p-6 lg:p-8">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-purple-600 mb-6">Évaluation</h2>
+    <div className="min-h-screen bg-violet-100 w-full p-4 sm:p-6 lg:p-8">
+        <h2 className="text-xl sm:text-3xl font-bold mb-6">Évaluation</h2>
         
 
         {/* Nom de la startup */}

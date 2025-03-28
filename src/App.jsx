@@ -1,11 +1,15 @@
 import React from "react";
 import EvaluationForm from "./components/Evaluation";
+import TeamForm from "./components/TeamForm";
+
 
 function App() {
   return (
-    <div>
+    <><div>
       <EvaluationForm />
-    </div>
+    </div><div>
+        <TeamForm />
+      </div></>
   );
 }
 
