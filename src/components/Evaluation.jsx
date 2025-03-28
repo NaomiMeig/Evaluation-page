@@ -98,10 +98,10 @@ const EvaluationForm = () => {
 
         
         <div className="flex flex-col sm:flex-row justify-end gap-3">
-          <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 rounded-md hover:bg-black">
+          <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 border border-gray-300 rounded-full hover:bg-black">
             Revenir
           </button>
-          <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 rounded-md hover:bg-black">
+          <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 border border-gray-300 rounded-full hover:bg-black">
             Continuer
           </button>
 

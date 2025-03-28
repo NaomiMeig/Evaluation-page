@@ -32,7 +32,7 @@ export default function RevenueForm () {
   };
 
   return (
-    <div className="max-w-full p-10 bg-purple-100 ">
+    <div className="max-w-full p-10 bg-violet-100 ">
       {/* Titre principal */}
       <h1 className="text-2xl sm:text-3xl font-semibold text-purle-600 mb-6">
         Comment tu gagnes de l'argent
@@ -81,11 +81,11 @@ export default function RevenueForm () {
       </div>
 
       {/* Boutons de navigation */}
-      <div className="flex justify-end gap-2 mt-6">
-  <button className="px-6 py-2 bg-white text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
+      <div className="flex flex-col sm:flex-row justify-end gap-3 mt-4">
+  <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 border border-gray-300 rounded-full hover:bg-black">
     Revenir
   </button>
-  <button className="px-6 py-2 bg-[black] text-white rounded-full hover:bg-[black] text-sm font-medium">
+  <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 border border-gray-300 rounded-full hover:bg-black">
     Continuer
   </button>
 </div>
