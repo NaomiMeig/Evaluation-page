@@ -7,6 +7,7 @@ const TeamForm = () => {
   const [teamMembers, setTeamMembers] = useState([
     { id: 1, name: "", firstName: "", gender: "", expertise: "", role: "", experience: "", linkedin: "" }
   ]);
+  const [errors, setErrors] = useState({});
 
   const options = {
     expertise: ["Développement", "Design", "Marketing"],
@@ -36,6 +37,15 @@ const TeamForm = () => {
         member.id === id ? { ...member, [field]: value } : member
       )
     );
+    // Validation du champ LinkedIn
+    if (field === "linkedin") {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [id]: !/^https?:\/\/(www\.)?linkedin\.com/.test(value)
+          ? "Le lien doit commencer par https://www.linkedin.com"
+          : ""
+      }));
+    }
   };
 
   const addMember = () => {
@@ -45,18 +55,21 @@ const TeamForm = () => {
     ]);
   };
 
+
+
   return (
     <div className="min-h-screen bg-primary w-full p-4 sm:p-6 lg:p-8 font-inter">
+      <div>
       {/* Sélection du nombre de membres */}
       <div className="mb-4">
         <h2 className="text-xl font-bold">Combien de personnes dans votre équipe ?</h2>
         <div className="flex gap-2 mt-2">
-          {[1, 2, 3, 4, 5].map((num) => (
+          {[1, 2, 3, 4,"+5"].map((num) => (
             <button
               key={num}
               onClick={() => handleTeamSizeChange(num)}
               className={`px-4 py-2 rounded-md border ${
-                teamSize === num ? "bg-primary text-white" : "bg-white border-gray-300"
+                teamSize === num ? "bg-purple-600 text-white" : "bg-white border-gray-300"
               }`}
             >
               {num}
@@ -67,11 +80,11 @@ const TeamForm = () => {
 
       {/* Message pour l'équipe */}
       <div className="mb-4">
-        <h2 className="text-xl font-bold">Message pour votre équipe</h2>
+        <h2 className="text-xl font-bold">Que souhaitez-vous ajouter pour compléter votre équipe?</h2>
         <textarea
           value={teamMessage}
           onChange={(e) => setTeamMessage(e.target.value)}
-          className="w-full p-2 mt-3 border rounded-md bg-white text-sm sm:text-base"
+          className="w-200 p-2 mt-3 border border-white rounded-md bg-white text-sm sm:text-base"
           placeholder="Écrivez un message..."
         />
       </div>
@@ -86,14 +99,14 @@ const TeamForm = () => {
               placeholder="Nom"
               value={member.name}
               onChange={(e) => handleMemberChange(member.id, "name", e.target.value)}
-              className="border bg-white p-2 rounded-md w-full sm:w-1/3"
+              className="border border-white bg-white p-2 rounded-md w-full sm:w-1/3"
             />
             <input
               type="text"
               placeholder="Prénom"
               value={member.firstName}
               onChange={(e) => handleMemberChange(member.id, "firstName", e.target.value)}
-              className="border bg-white p-2 rounded-md w-full sm:w-1/3"
+              className="border border-white bg-white p-2 rounded-md w-full sm:w-1/3"
             />
             <div className="flex flex-row items-center gap-2">
               <span className="font-medium sm:ml-2 ">Sexe :</span>
@@ -125,7 +138,7 @@ const TeamForm = () => {
           <select
             value={member.expertise}
             onChange={(e) => handleMemberChange(member.id, "expertise", e.target.value)}
-            className="border bg-white p-2 rounded-md w-full sm:w-1/3"
+            className="border border-white bg-white p-2 rounded-md w-full sm:w-1/3"
           >
             <option value="">Expertise</option>
             {options.expertise.map((opt) => (
@@ -137,7 +150,7 @@ const TeamForm = () => {
           <select
             value={member.role}
             onChange={(e) => handleMemberChange(member.id, "role", e.target.value)}
-            className="border bg-white p-2 rounded-md w-full sm:w-1/3"
+            className="border border-white bg-white p-2 rounded-md w-full sm:w-1/3"
           >
             <option value="">Rôle</option>
             {options.role.map((opt) => (
@@ -149,7 +162,7 @@ const TeamForm = () => {
           <select
             value={member.experience}
             onChange={(e) => handleMemberChange(member.id, "experience", e.target.value)}
-            className="border bg-white p-2 rounded-md w-full sm:w-1/3"
+            className="border border-white bg-white p-2 rounded-md w-full sm:w-1/3"
           >
             <option value="">Experience</option>
             {options.experience.map((opt) => (
@@ -164,24 +177,36 @@ const TeamForm = () => {
             placeholder="Lien LinkedIn"
             value={member.linkedin}
             onChange={(e) => handleMemberChange(member.id, "linkedin", e.target.value)}
-            className="border bg-white p-2 rounded-md w-full"
+            className={`border p-2 rounded-md w-full bg-white ${
+            errors[member.id] ? "border-red-500" : "border-white"
+            }`}
           />
+          {errors[member.id] && (
+             <p className="text-red-500 text-sm">{errors[member.id]}</p>
+          )}
+
         </div>
       ))}
-
+<div className="flex justify-end">
 <button 
   onClick={addMember}
-  className="mt-4 w-10 h-10 flex items-center justify-center bg-violet-200 text-white rounded-full text-xl hover:bg-violet-300">
+  className="mt-4 w-10 h-10 flex justify-center bg-violet-200 text-white rounded-full text-xl hover:bg-violet-300">
   +
 </button>
-
+</div>
+</div>
 
 
       {/* Boutons de navigation */}
-      <div className="flex flex-col sm:flex-row justify-end gap-3 mt-4">
-        <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 border border-gray-300 rounded-full hover:bg-black">Revenir</button>
-        <button className="w-full sm:w-auto bg-purple-300 text-white py-2 px-4 border border-gray-300 rounded-full hover:bg-black">Continuer</button>
+      <div className="flex justify-end gap-2 mt-6">
+        <button className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
+          Revenir
+        </button>
+       <button className="px-6 py-2 bg-[black] text-white rounded-full hover:bg-[black] text-sm font-medium">
+         Continuer
+        </button>
       </div>
+    
     </div>
   );
 };
