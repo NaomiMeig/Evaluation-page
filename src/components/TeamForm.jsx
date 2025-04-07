@@ -194,37 +194,32 @@ const TeamForm = () => {
                 </label>
               </div>
             </div>
-
-            <div className="flex sm:flex-row flex-col gap-4">
-              {/* Expertise */}
-              <div className="relative w-full sm:w-1/3">
-                <select
-                  value={member.expertise}
-                  onChange={(e) => handleMemberChange(member.id, "expertise", e.target.value)}
-                  className="appearance-none border border-white bg-white p-2 rounded-md w-full pr-8"
-                >
-                  <option value="">Expertise</option>
-                  {options.expertise.map((opt) => (
-                    <option key={opt} value={opt}>{opt}</option>
-                  ))}
-                </select>
-                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-black text-xs">▼</span>
-              </div>
-
-              {/* Rôle */}
-              <div className="relative w-full sm:w-1/3">
-                <select
-                  value={member.role}
-                  onChange={(e) => handleMemberChange(member.id, "role", e.target.value)}
-                  className="appearance-none border border-white bg-white p-2 rounded-md w-full pr-8"
-                >
-                  <option value="">Rôle</option>
-                  {options.role.map((opt) => (
-                    <option key={opt} value={opt}>{opt}</option>
-                  ))}
-                </select>
-                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-black text-xs">▼</span>
-              </div>
+            
+          </div>
+          <div className="flex sm:flex-row gap-4">
+             {/* Sélection de l'expertise */}
+          <select
+            value={member.expertise}
+            onChange={(e) => handleMemberChange(member.id, "expertise", e.target.value)}
+            className="border border-white bg-white p-2 rounded-md w-full sm:w-1/3"
+          >
+            <option value="">Expertise</option>
+            {options.expertise.map((opt) => (
+              <option key={opt} value={opt}>{opt}</option>
+            ))}
+          </select>
+             
+          {/* Sélection du rôle */}
+          <select
+            value={member.role}
+            onChange={(e) => handleMemberChange(member.id, "role", e.target.value)}
+            className="border border-white bg-white p-2 rounded-md w-full sm:w-1/3"
+          >
+            <option value="">Rôle</option>
+            {options.role.map((opt) => (
+              <option key={opt} value={opt}>{opt}</option>
+            ))}
+          </select>
 
               {/* Expérience */}
               <div className="relative w-full sm:w-1/3">
