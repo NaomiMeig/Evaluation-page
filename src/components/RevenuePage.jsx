@@ -34,10 +34,10 @@ export default function RevenueForm () {
   return (
     <div className="max-w-full p-10 bg-violet-100 ">
       {/* Titre principal */}
-      <h1 className="text-2xl sm:text-3xl font-semibold text-purle-600 mb-6">
+      <h1 className="text-2xl sm:text-3xl font-semibold text-purle-600 mb-1">
         Comment tu gagnes de l'argent
       </h1>
-      <p className="text-sm text-gray-500  mb-6">
+      <p className="text-sm text-gray-500  mb-8">
         Plusieurs choix possibles
       </p>
 
@@ -47,7 +47,7 @@ export default function RevenueForm () {
           <button
             key={model.id}
             onClick={() => toggleModel(model.id)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium border
+            className={`px-4 py-2 text-sm font-medium border
               ${selectedModels.includes(model.id)
                 ? 'bg-[#6D28D9] text-white border-purple'
                 : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
@@ -63,13 +63,13 @@ export default function RevenueForm () {
         Combien de CA tu as fait pour l'instant
       </h2>
 
-      {/* Boutons des cfiffre d'affaires de CA */}
+      {/* Boutons des chiffre d'affaires de CA */}
       <div className="flex justify-start items-start flex-wrap gap-2 mb-8">
         {revenueRanges.map(range => (
           <button
             key={range.id}
             onClick={() => selectRange(range.id)}
-            className={`py-2 px-1 rounded-lg text-sm font-medium border
+            className={`py-2 px-1 text-sm font-medium border
               ${selectedRange === range.id
                 ? 'bg-[#6D28D9] text-white border-purple'
                 : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
