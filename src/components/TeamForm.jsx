@@ -151,7 +151,7 @@ const TeamForm = () => {
                 onChange={(e) => handleMemberChange(member.id, "firstName", e.target.value)}
                 className="border border-white bg-white p-2 rounded-md w-full sm:w-1/3"
               />
-              <div className="flex flex-row items-center gap-2">
+              <div className="flex flex-row items-center gap-8">
                 <label className="flex items-center space-x-1">
                 <div className="relative w-5 h-5 bg-indigo-500 rounded-full flex items-center justify-center">
                     <div className="absolute -top-0.5 left-1/2 transform -translate-x-1/2 w-4 h-1.5 bg-indigo-900 rounded-t-lg"></div>
