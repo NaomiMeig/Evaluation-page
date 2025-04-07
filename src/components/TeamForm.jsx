@@ -143,6 +143,7 @@ const TeamForm = () => {
             <option value="">Expertise</option>
             {options.expertise.map((opt) => (
               <option key={opt} value={opt}>{opt}</option>
+              
             ))}
           </select>
              
