@@ -14,7 +14,7 @@ const EvaluationForm = () => {
 
         {/* Nom de la startup */}
         <div className="mb-6">
-          <label className="block text-gray-800 font-bold text-sm sm:text-base">Le nom de la startup :</label>
+          <label className="block text-black font-bold text-sm sm:text-base">Le nom de la startup :</label>
           <input
             type="text"
             className="w-90 mt-2 p-3 border border-white rounded-md focus:ring-2 focus:ring-purple-500 bg-white text-sm sm:text-base"
@@ -25,7 +25,7 @@ const EvaluationForm = () => {
 
         {/* Description de la startup */}
         <div className="mb-6">
-          <label className="block text-gray-800 font-bold text-sm sm:text-base">Ta startup en une phrase :</label>
+          <label className="block text-black  font-bold text-sm sm:text-base">Ta startup en une phrase :</label>
           <input
             type="text"
             className="w-200 mt-2 p-3 border border-white rounded-md focus:ring-2 focus:ring-purple-500 bg-white text-sm sm:text-base"
@@ -36,7 +36,7 @@ const EvaluationForm = () => {
 
         {/* A-t-il des associés ? */}
         <div className="mb-6">
-          <label className="block text-gray-800 font-bold">T'as des associés ?</label>
+          <label className="block text-black font-bold">T'as des associés ?</label>
           <div className="flex flex-wrap gap-4 mt-4">
             <button
               className={`px-4 py-2  ${
@@ -59,7 +59,7 @@ const EvaluationForm = () => {
 
         {hasAssociates && (
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm sm:text-base">Nombre d'associés :</label>
+            <label className="block text-black text-sm sm:text-base">Nombre d'associés :</label>
             <div className="flex flex-wrap gap-4 mt-4">
               {[1, 2, 3, 4, "+5"].map((num) => (
                 <button
@@ -78,7 +78,7 @@ const EvaluationForm = () => {
 
         {/* Stade de développement */}
         <div className="mb-6">
-          <label className="block text-gray-800 font-bold">Stade de développement :</label>
+          <label className="block text-black font-bold">Stade de développement :</label>
           <div className="flex flex-wrap gap-2 mt-4">
             {["Idée en cours de validation", "Prototype ou MVP prêt", "Produit lancé avec des utilisateurs/clients initiaux","Croissance:produit validé avec des revenus réguliers"].map(
               (option) => (

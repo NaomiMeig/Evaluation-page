@@ -151,8 +151,8 @@ const TeamForm = () => {
                 onChange={(e) => handleMemberChange(member.id, "firstName", e.target.value)}
                 className="border border-white bg-white p-2 rounded-md w-full sm:w-1/3"
               />
-              <div className="flex flex-row items-center gap-8">
-                <label className="flex items-center space-x-1">
+              <div className="flex flex-row items-center gap-12">
+                <label className="flex items-center space-x-5">
                 <div className="relative w-5 h-5 bg-indigo-500 rounded-full flex items-center justify-center">
                     <div className="absolute -top-0.5 left-1/2 transform -translate-x-1/2 w-4 h-1.5 bg-indigo-900 rounded-t-lg"></div>
                     <div className="absolute -top-0.5 left-0.5 w-1 h-1.5 bg-indigo-900 rounded-md"></div>
@@ -163,7 +163,7 @@ const TeamForm = () => {
                       <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-0.5 bg-white rounded-full"></div>
                     </div>
                   </div>
-                </label>
+                
                   <input
                     type="radio"
                     name={`gender-${member.id}`}
@@ -171,8 +171,9 @@ const TeamForm = () => {
                     checked={member.gender === "male"}
                     onChange={(e) => handleMemberChange(member.id, "gender", e.target.value)}
                   />
+                </label>
                  
-                <label className="flex items-center space-x-1">
+                <label className="flex items-center space-x-5">
                 <div className="relative w-5 h-5 bg-purple-300 rounded-full flex items-center justify-center">
                     <div className="absolute -top-0.5 -left-0.5 w-2 h-2 bg-purple-600 rounded-full"></div>
                     <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-purple-600 rounded-full"></div>
