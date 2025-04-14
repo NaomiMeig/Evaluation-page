@@ -1,29 +1,19 @@
 import { useState } from 'react';
 
-const CategorieForm = () => {
-  const [selectedModel, setSelectedModel] = useState(null);
+const PrincipauxBesoin = () => {
+  
   const [selectedRanges, setSelectedRanges] = useState([]);
 
-  const categorieModels = [
-    { id: 'Fintech', label: 'Fintech' },
-    { id: 'edtech', label: 'Edtech' },
-    { id: 'TravelTech', label: 'TravelTech' },
-    { id: 'green', label: 'GreenTech' }
-  ];
 
   const categorieRanges = [
-    { id: 'paiement', label: 'Paiement en ligne' },
-    { id: 'solution', label: 'Solutions bancaires numériques' },
-    { id: 'gestion', label: 'Gestion d actifs' },
-    { id: 'crypto', label: 'Cryptomonnaies' },
-    { id: 'finance', label: 'Finance participatif' },
-    { id: 'assurance', label: 'Assurance numérique' }
+    { id: 'Soutiens financier', label: 'Soutiens financier' },
+    { id: 'expert', label: 'Expertise technique ou strategique' },
+    { id: 'dvp', label: 'Developpement commercial et acquissition de clients' },
+    { id: 'Renforcement de l equipe', label: 'Renforcement de l equipe' }
+   
   ];
 
-  const selectModel = (modelId) => {
-    setSelectedModel(modelId === selectedModel ? null : modelId);
-  };
-
+ 
   const toggleRange = (rangeId) => {
     setSelectedRanges(prev =>
       prev.includes(rangeId)
@@ -38,31 +28,9 @@ const CategorieForm = () => {
       <div className="flex-1 p-10  bg-primary font-inter">
         {/* Titre principal */}
         <h2 className="text-2xl sm:text-xl font-semibold text-black mb-6">
-          Catégorie de ta startup
+          Quels sont tes principaux  besoins pour booster la croissance de ta startup ?
         </h2>
-
-        {/* Modèles de catégorie */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {categorieModels.map(model => (
-            <button
-              key={model.id}
-              onClick={() => selectModel(model.id)}
-              className={`py-3 px-8 rounded-lg text-sm font-medium border
-                ${selectedModel === model.id
-                  ? 'bg-[#6D28D9] text-white border-purple-600'
-                  : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
-                }`}
-            >
-              {model.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Activités */}
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">
-          Activités de ta startup
-        </h2>
-
+        <p className="text-gray-500 mb-8">Plusieurs choix possibles</p>
         <div className="flex flex-wrap gap-2 mb-8">
           {categorieRanges.map(range => (
             <button
@@ -104,4 +72,4 @@ const CategorieForm = () => {
   );
 };
 
-export default CategorieForm;
+export default PrincipauxBesoin;

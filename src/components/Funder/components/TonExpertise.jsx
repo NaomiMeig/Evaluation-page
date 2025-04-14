@@ -23,7 +23,7 @@ const TonExpertise = () => {
   ];
 
   return (
-    <div className="flex min-h-screen bg-purple-100">
+    <div className="flex min-h-screen  bg-primary font-inter">
       {/* Formulaire à gauche */}
       <div className="flex-1 p-10">
         {/* Section Expertise */}

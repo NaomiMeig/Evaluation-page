@@ -17,7 +17,7 @@ export default function ContactForm() {
   const [phone, setPhone] = useState("");
 
   return (
-    <div className="min-h-screen w-full flex bg-purple-100">
+    <div className="min-h-screen w-full flex  bg-primary font-inter">
       
       {/* Colonne gauche - Formulaire */}
       <div className="w-3/4 px-10 py-10 flex flex-col justify-between">

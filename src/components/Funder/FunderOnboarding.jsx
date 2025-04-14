@@ -5,6 +5,9 @@ import ConfirmationStep from './components/ConfirmationStep'
 import ContactForm from './components/ContactForm'
 import MissionForm from './components/TaMission'
 import TonExpertise from './components/TonExpertise'
+import ConfirmationLinkedin from './components/ConfirmationLinkedin'
+import Top from './components/Top'
+import PrincipauxBesoin from './components/PrincipauxBesoin'
 
 export default function FunderOnboarding() {
   return (
@@ -26,6 +29,17 @@ export default function FunderOnboarding() {
    <div>
      <TonExpertise/> 
    </div>
+   <div>
+     <PrincipauxBesoin/> 
+   </div>
+   <div>
+     <ConfirmationLinkedin/> 
+   </div>
+
+   <div>
+     <Top/> 
+   </div>
+
    </>
   )
 }

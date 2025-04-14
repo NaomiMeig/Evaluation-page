@@ -4,7 +4,7 @@ const ConfirmationDeuxF = ({ name }) => {
   return (
     <div className="flex min-h-screen">
       {/* Contenu principal à gauche */}
-      <div className="flex flex-col items-center justify-center flex-1 bg-[#F3E8FF]">
+      <div className="flex flex-col items-center justify-center flex-1  bg-primary font-inter">
         <div className="w-full max-w-md mx-auto rounded-xl p-10 text-center">
           <div className="mb-6">
             <span className="text-4xl"></span>

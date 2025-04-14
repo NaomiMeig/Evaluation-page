@@ -2,7 +2,7 @@ import React from 'react';
 
 const ConfirmationStep = ({ name = "Adam" }) => {
   return (
-    <div className="flex h-screen w-full bg-purple-100">
+    <div className="flex h-screen w-full  bg-primary font-inter">
       {/* Partie gauche */}
       <div className="flex flex-col justify-center items-center w-3/4">
         <div className="text-center">

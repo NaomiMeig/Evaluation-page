@@ -5,9 +5,9 @@ const MissionForm = () => {
   const [passion, setPassion] = useState('');
 
   return (
-    <div className="flex min-h-screen bg-[#EDEEFF]">
+    <div className="flex min-h-screen  bg-primary font-inter">
       {/* Formulaire à gauche */}
-      <div className="flex-1 bg-[#F3E8FF]  items-center justify-end px-8">
+      <div className="flex-1  items-center justify-end px-8">
         <div className="max-w-md w-full p-6 rounded-lg">
           {/* Titre principal */}
           <h1 className="text-2xl font-bold text-gray-800 mb-4">Ta mission en une phrase ?</h1>
