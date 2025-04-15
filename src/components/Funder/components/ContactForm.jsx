@@ -10,13 +10,13 @@ const countries = [
   "Argentine", "Suisse", "Belgique", "Suède", "Norvège", "Pologne", "Sénégal",
   "Côte d'Ivoire", "Cameroun", "Afrique du Sud", "Corée du Sud"
 ];
-const navigate = useNavigate();
+
 export default function ContactForm() {
   const [selectedRole, setSelectedRole] = useState("Founder");
   const [lastName, setLastName] = useState("");
   const [location, setLocation] = useState("");
   const [phone, setPhone] = useState("");
-
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen w-full flex  bg-primary font-inter">
       
