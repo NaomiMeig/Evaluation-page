@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-
-const MissionForm = () => {
+import {useNavigate} from "react-router-dom";
+const TaMission = () => {
   const [mission, setMission] = useState('');
   const [passion, setPassion] = useState('');
-
+const navigate = useNavigate();
   return (
     <div className="flex min-h-screen  bg-primary font-inter">
       {/* Formulaire à gauche */}
@@ -37,10 +37,10 @@ const MissionForm = () => {
 
           {/* Boutons navigation */}
           <div className="flex justify-end gap-2 mt-6">
-            <button className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
+            <button onClick={()=> navigate('/TonExpertise')} className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
               Revenir
             </button>
-            <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
+            <button onClick={()=> navigate('/ConfirmationDeuxF')} className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
               Continuer
             </button>
           </div>
@@ -61,4 +61,4 @@ const MissionForm = () => {
   );
 };
 
-export default MissionForm;
+export default TaMission;

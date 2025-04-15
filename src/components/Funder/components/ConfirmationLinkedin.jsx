@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-
+import {useNavigate} from "react-router-dom";
 const ConfirmationLinkedin = () => {
   const [webLink, setWebLink] = useState('');
   const [linkedinPage, setLinkedinPage] = useState('');
   const [videoLink, setVideoLink] = useState('');
-
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen flex flex-col bg-primary font-inter">
       <div className="flex flex-grow">
@@ -66,10 +66,10 @@ const ConfirmationLinkedin = () => {
 
             {/* Navigation */}
             <div className="flex justify-end mt-10 gap-2">
-             <button className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
+             <button  onClick={()=> navigate('/principauxbesoin')} className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
                Revenir
              </button>
-             <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
+             <button  onClick={()=> navigate('/top')} className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
                 Continuer
              </button>
         </div>

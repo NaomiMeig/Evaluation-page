@@ -1,7 +1,8 @@
 import React from 'react';
-
+import {useNavigate} from "react-router-dom";
 
 const Top = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen flex flex-col bg-primary font-inter">
       <div className="flex flex-grow">
@@ -41,11 +42,11 @@ const Top = () => {
 
        {/* Boutons de navigation */}
      <div className="flex justify-end gap-2 mt-6">
-        <button className="px-6 py-2  text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
+        <button onClick={()=> navigate('/confirmationlinkedin')} className="px-6 py-2  text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
           Revenir
         </button>
        <button className="px-6 py-2 bg-[black] text-white rounded-full hover:bg-[black] text-sm font-medium">
-         Continuer
+         Terminer
         </button>
       </div>
     </div>

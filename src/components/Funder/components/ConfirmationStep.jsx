@@ -1,6 +1,7 @@
 import React from 'react';
-
+import {useNavigate} from "react-router-dom";
 const ConfirmationStep = ({ name = "Adam" }) => {
+  const navigate = useNavigate();
   return (
     <div className="flex h-screen w-full  bg-primary font-inter">
       {/* Partie gauche */}
@@ -12,12 +13,10 @@ const ConfirmationStep = ({ name = "Adam" }) => {
         </div>
         <div className="flex gap-4 mt-10">
 
-            <button className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
+            <button onClick={()=> navigate('/ContactForm')} className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
             Revenir
           </button>
-          <button
-           
-            className="px-6 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-gray-800"
+          <button onClick={()=> navigate('/TonExpertise')} className="px-6 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-gray-800"
           >
             Continuer
           </button>

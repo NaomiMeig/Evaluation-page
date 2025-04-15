@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-
+import {useNavigate} from "react-router-dom";
 const TonExpertise = () => {
   const [selectedExpertise, setSelectedExpertise] = useState(null);
   const [selectedRole, setSelectedRole] = useState(null);
@@ -21,7 +21,7 @@ const TonExpertise = () => {
     { id: 'consultant_mgmt', name: 'Consultant management' },
     { id: 'expert finance et controle de gestion', name: 'Expert finance & controle de gestion' }
   ];
-
+const navigate = useNavigate();
   return (
     <div className="flex min-h-screen  bg-primary font-inter">
       {/* Formulaire à gauche */}
@@ -68,10 +68,10 @@ const TonExpertise = () => {
 
         {/* Boutons de navigation */}
         <div className="flex justify-end gap-2 mt-6">
-          <button className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
+          <button onClick={()=> navigate('/confirmationstep')} className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
             Revenir
           </button>
-          <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
+          <button onClick={()=> navigate('/tamission')} className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
             Continuer
           </button>
         </div>

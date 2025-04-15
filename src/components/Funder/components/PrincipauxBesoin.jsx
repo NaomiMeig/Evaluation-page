@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import {useNavigate} from "react-router-dom";
 const PrincipauxBesoin = () => {
   
   const [selectedRanges, setSelectedRanges] = useState([]);
@@ -21,7 +21,7 @@ const PrincipauxBesoin = () => {
         : [...prev, rangeId]
     );
   };
-
+const navigate = useNavigate();
   return (
     <div className="flex min-h-screen">
       {/* Formulaire à gauche */}
@@ -49,10 +49,10 @@ const PrincipauxBesoin = () => {
 
         {/* Navigation */}
         <div className="flex justify-end mt-10 gap-2">
-          <button className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
+          <button onClick={()=> navigate('/categorie')} className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
             Revenir
           </button>
-          <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
+          <button  onClick={()=> navigate('/confirmationlinkedin')} className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
             Continuer
           </button>
         </div>

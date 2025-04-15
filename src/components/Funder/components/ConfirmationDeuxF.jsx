@@ -13,10 +13,10 @@ const ConfirmationDeuxF = ({ name }) => {
           <p className="text-lg font-bold mb-2">Je vais te poser quelques questions sur ta startup, OK ?</p>
 
           <div className="flex justify-end gap-2 mt-6">
-            <button className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
+            <button onClick={()=> navigate('/tonexpertise')} className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
               Revenir
             </button>
-            <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
+            <button onClick={()=> navigate('/categorie')} className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
               Continuer
             </button>
           </div>

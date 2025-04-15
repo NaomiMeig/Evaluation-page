@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 const roles = ["Founder", "Professionnel", "Investisseur"];
 
@@ -9,7 +10,7 @@ const countries = [
   "Argentine", "Suisse", "Belgique", "Suède", "Norvège", "Pologne", "Sénégal",
   "Côte d'Ivoire", "Cameroun", "Afrique du Sud", "Corée du Sud"
 ];
-
+const navigate = useNavigate();
 export default function ContactForm() {
   const [selectedRole, setSelectedRole] = useState("Founder");
   const [lastName, setLastName] = useState("");
@@ -93,7 +94,8 @@ export default function ContactForm() {
           <button className="px-6 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium">
             Revenir
           </button>
-          <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
+
+          <button onClick={()=> navigate('/confirmationstep')} className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 text-sm font-medium">
             Continuer
           </button>
         </div>
